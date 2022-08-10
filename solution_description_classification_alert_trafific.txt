@@ -1,0 +1,16 @@
+The solution included the following steps:
+1. Getting acquainted with the data, splitting the features into the following groups: quantitative (continuous, level and cyclical) and qualitative. Dropping the column alert_ids.
+2. Defining the transformer classes for processing the data in a pipeline:
+•	CyclicalTransformer – transforming cyclical features (weekday, hour, minute, second into cos-sin representation)
+•	QualitativeToNumericTransformer – transforming qualitative features to one-hot encoded features,
+•	OrdinalTransformer – transforming level features to discrete numeric features,
+•	NanRelpacer – replacing missing values in n1-n9 with -1.
+•	EncriptedIpTransformer – splitting the IP into octets, mapping octet values from encrypted representation into discrete numerical form, i.e. 0 – 255 AA-ZZ -> 0-255 256 – 931.
+•	NanWithMeanReplacer/NanWithModeReplacer – replacing missing values with train set mean (for numeric) or mode (qualitative and cyclical)
+3. Creating a pipeline incorporating the defined processing steps.
+4. Random Forest was utilized as a final step in the pipeline.
+5. Greedy iterative feature selection by means of 5-fold cross-validation. – the features ensuring the highest value of ROC AUC were selected.
+6. Hyperparameter adjusting: tree number and tree depth were fine-tuned by means of cross validation similarly to the previous step.
+7. Training the pipeline on the complete training dataset, generating probabilities, submission of final file.
+
+
