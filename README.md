@@ -5,7 +5,7 @@ Classification <br>
 airplanes.csv dataset is from kaggle https://www.kaggle.com/code/charles01dev/houseprices-charles01/data (test.csv)
 Programming language detection <br>
 data.csv - contains four columns: first columns contains target langauge to be predicted, second contains project id, third contains file id, 
-fourth contains code. <br>
+fourth contains code. <br> 
 One project can contain several files. Each file can contain different programming language code. <br>
-Classification trafic alerts
+Classification trafic alerts <br>
 Data come from data mining competition (Suspicious Network Event Recognition) organized in association with IEEE BigData 2019 conference
